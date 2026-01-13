@@ -27,38 +27,42 @@ export default function AboutPage() {
 
           <ul className="space-y-2 text-muted-foreground">
             <li>
+              <span>GitHub: </span>
               <a
                 href="https://github.com/harshanand120"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-foreground transition-colors"
               >
-                GitHub: harshanand120
+               harshanand120
               </a>
             </li>
             <li>
+              <span>LinkedIn: </span>
               <a
                 href="https://www.linkedin.com/in/harsh-anand-151622144/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-foreground transition-colors"
               >
-                LinkedIn: harsh-anand-151622144
+                 harsh-anand-151622144
               </a>
             </li>
             <li>
+              <span>Twitter/X: </span>
               <a
                 href="https://twitter.com/harshanand120"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-foreground transition-colors"
               >
-                Twitter/X: @harshanand120
+                @harshanand120
               </a>
             </li>
             <li>
+              <span>Email: </span>
               <a href="mailto:me@harshanand.dev" className="underline hover:text-foreground transition-colors">
-                Email: me@harshanand.dev
+                me@harshanand.dev
               </a>
             </li>
           </ul>
