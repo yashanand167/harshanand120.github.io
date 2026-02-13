@@ -32,7 +32,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <main className="min-h-screen bg-background">
-      <div className="max-w-4xl mx-auto px-7 py-16">
+      <div className="max-w-3xl mx-auto px-7 py-16">
         <nav className="flex items-center justify-between mb-12">
           <Link
             href="/"
