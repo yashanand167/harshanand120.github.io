@@ -32,7 +32,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <main className="min-h-screen bg-background">
-      <div className="max-w-2xl mx-auto px-6 py-16">
+      <div className="max-w-4xl mx-auto px-7 py-16">
         <nav className="flex items-center justify-between mb-12">
           <Link
             href="/"
@@ -52,7 +52,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             )}
           </header>
 
-          <div className="prose prose-neutral dark:prose-invert max-w-none">
+          <div className="prose prose-neutral dark:prose-invert max-w-none text-justify">
             <Markdown content={post.content} />
           </div>
         </article>

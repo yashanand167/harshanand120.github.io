@@ -19,7 +19,7 @@ IPv4 uses a **32-bit address space**, typically written as four 8-bit segments (
 
 This design allows for:
 
-- **2<sup>32</sup> total addresses**
+- **2^32^ total addresses**
 - Approximately **4.3 billion unique IP addresses**
 
 In the early days of the internet, this number felt comfortably large.
@@ -91,7 +91,7 @@ IPv6 uses a **128-bit address space**, typically written as eight groups of hexa
 
 This design allows for:
 
-- **2^32** total addresses**
+- **2^128^** total addresses
 - An effectively **unlimited address pool**
 - The ability to assign **unique, globally routable IPs** to every device
 

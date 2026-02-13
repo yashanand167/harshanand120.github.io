@@ -1,5 +1,6 @@
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
+import remarkSupersub from "remark-supersub"
 
 interface MarkdownProps {
   content: string
@@ -8,7 +9,7 @@ interface MarkdownProps {
 export function Markdown({ content }: MarkdownProps) {
   return (
     <ReactMarkdown
-      remarkPlugins={[remarkGfm]}
+      remarkPlugins={[remarkGfm,remarkSupersub]}
       components={{
         h1: ({ children }) => <h1 className="text-2xl font-semibold text-foreground mt-8 mb-4">{children}</h1>,
         h2: ({ children }) => <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{children}</h2>,
