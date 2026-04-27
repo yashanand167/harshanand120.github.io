@@ -35,7 +35,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <div className="max-w-3xl mx-auto px-7 py-16">
         <nav className="flex items-center justify-between mb-12">
           <Link
-            href="/"
+            href="/blog"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1"
           >
             ← Back
@@ -58,7 +58,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </article>
 
         <footer className="mt-20 pt-8 border-t border-border">
-          <Link href="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <Link href="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             ← Back
           </Link>
         </footer>

@@ -1,37 +1,72 @@
-import Link from "next/link"
-import { getAllPosts } from "@/lib/posts"
-import { formatDate } from "@/lib/utils"
-import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { Header } from "@/components/header"
 
-export default function HomePage() {
-  const posts = getAllPosts()
+export const metadata = {
+  title: "about",
+  description: "Learn more about me and my work.",
+}
 
+export default function AboutPage() {
   return (
     <main className="min-h-screen bg-background">
       <div className="max-w-3xl mx-auto px-7 py-16">
-        <Header currentPage="blogs" />
+        <Header currentPage="about" />
 
-        <section>
-          <h2 className="sr-only">Blog Posts</h2>
-          <ul className="space-y-8">
-            {posts.map((post) => (
-              <li key={post.slug}>
-                <article>
-                  <Link href={`/blog/${post.slug}`} className="group block">
-                    <time className="text-sm text-muted-foreground">{formatDate(post.date)}</time>
-                    <h3 className="text-lg font-medium text-foreground mt-1 group-hover:text-muted-foreground transition-colors">
-                      {post.title}
-                    </h3>
-                    {post.description && (
-                      <p className="text-muted-foreground mt-2 leading-relaxed">{post.description}</p>
-                    )}
-                  </Link>
-                </article>
-              </li>
-            ))}
+        <article className="prose prose-neutral dark:prose-invert max-w-none">
+          <h1 className="text-3xl font-semibold text-foreground mb-8">About Me</h1>
+
+          <p className="text-muted-foreground leading-relaxed mb-6">
+            Hello! I'm Harsh, a Software Engineer and writer passionate about technology, design, and sharing ideas through writing.
+          </p>
+
+          <p className="text-muted-foreground leading-relaxed mb-6">
+            This blog is where I share what I&apos;m learning, through tutorials, experiments, and experiences—while documenting the journey in public.
+          </p>
+
+          <h2 className="text-xl font-semibold text-foreground mt-10 mb-4">Connect</h2>
+
+          <ul className="space-y-2 text-muted-foreground">
+            <li>
+              <span>GitHub: </span>
+              <a
+                href="https://github.com/harshanand120"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-foreground transition-colors"
+              >
+               harshanand120
+              </a>
+            </li>
+            <li>
+              <span>LinkedIn: </span>
+              <a
+                href="https://www.linkedin.com/in/harshanand120/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-foreground transition-colors"
+              >
+                 harshanand120
+              </a>
+            </li>
+            <li>
+              <span>Twitter/X: </span>
+              <a
+                href="https://twitter.com/harshanand120"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-foreground transition-colors"
+              >
+                @harshanand120
+              </a>
+            </li>
+            <li>
+              <span>Email: </span>
+              <a href="mailto:me@harshanand.dev" className="underline hover:text-foreground transition-colors">
+                me@harshanand.dev
+              </a>
+            </li>
           </ul>
-        </section>
+        </article>
         <Footer/>
       </div>
     </main>

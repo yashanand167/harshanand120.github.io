@@ -2,10 +2,11 @@
 
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
+import { flushSync } from "react-dom"
 import { Moon, Sun } from "lucide-react"
 
 export function ThemeToggle() {
-  const { theme, setTheme, resolvedTheme } = useTheme()
+  const { setTheme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -16,9 +17,24 @@ export function ThemeToggle() {
     return <div className="w-8 h-8" />
   }
 
+  const toggleTheme = () => {
+    const nextTheme = resolvedTheme === "dark" ? "light" : "dark"
+
+    if (!(document as any).startViewTransition) {
+      setTheme(nextTheme)
+      return
+    }
+
+    (document as any).startViewTransition(() => {
+      flushSync(() => {
+        setTheme(nextTheme)
+      })
+    })
+  }
+
   return (
     <button
-      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+      onClick={toggleTheme}
       className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
       aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
     >
