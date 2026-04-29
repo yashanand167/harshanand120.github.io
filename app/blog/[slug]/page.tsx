@@ -4,6 +4,7 @@ import { getPostBySlug, getAllPosts } from "@/lib/posts"
 import { formatDate } from "@/lib/utils"
 import { Markdown } from "@/components/markdown"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { ScrollIndicator } from "@/components/scroll-indicator"
 
 export async function generateStaticParams() {
   const posts = getAllPosts()
@@ -23,6 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+
   const { slug } = await params
   const post = getPostBySlug(slug)
 
@@ -31,8 +33,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   }
 
   return (
-    <main className="min-h-screen bg-background">
-      <div className="max-w-3xl mx-auto px-7 py-16">
+    <main className="min-h-screen bg-background relative">
+      <ScrollIndicator />
+      <div className="bg-dot-pattern fixed inset-0 -z-10 pointer-events-none" />
+      <div className="max-w-3xl mx-auto px-7 py-16 relative z-10">
         <nav className="flex items-center justify-between mb-12">
           <Link
             href="/blog"
@@ -57,11 +61,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </article>
 
-        <footer className="mt-20 pt-8 border-t border-border">
+        {/* <footer className="mt-20 pt-8 border-t border-border">
           <Link href="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             ← Back
           </Link>
-        </footer>
+        </footer> */}
       </div>
     </main>
   )
