@@ -8,12 +8,19 @@ import { useState } from "react"
 import { FileCode, Mail, MailOpen, Laptop } from "lucide-react"
 import Link from "next/link"
 import { LettersPullUp } from "@/components/letters-pull-up"
+import { useRouter } from "next/navigation"
 
 export default function AboutPage() {
   const [iconVisible, setIconVisible] = useState(false);
+  const router = useRouter();
 
   const toolsRow1 = ["Node.js", "Nest.js", "Spring Boot", "PostgreSQL", "Docker", "AWS"];
   const toolsRow2 = ["Python", "Go", "Kubernetes", "Redis", "MongoDB", "GraphQL", "Git"];
+
+  const buttonOnClick = () => {
+    router.push(`https://drive.google.com/file/d/1XEYNProa0kB9XgZz-ISpaYHCKFMq5SKN/view`)
+
+  }
 
   return (
     <main className="min-h-screen relative">
@@ -29,6 +36,7 @@ export default function AboutPage() {
               onHoverEnd={() => setIconVisible(false)}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
+              onClick={buttonOnClick}
               className="flex items-center justify-center px-4 py-2 rounded-md text-sm font-medium bg-zinc-900 text-zinc-50 hover:bg-zinc-900/90 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-50/90 transition-colors"
             >
               <span>Resume</span>
@@ -214,7 +222,7 @@ export default function AboutPage() {
                 <Image src="/LinkedIn.png" alt="LinkedIn" fill className="object-cover" />
               </Link>
               <Link href="https://github.com/harshanand120" target="_blank" rel="noopener noreferrer" className="relative w-12 h-12 shrink-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 hover:scale-110 transition-transform hover:border-zinc-300 dark:hover:border-zinc-700">
-                <Image src="/GitHub.png" alt="GitHub" fill className="object-cover" />
+                <Image src="/Github.png" alt="GitHub" fill className="object-cover" />
               </Link>
               <Link href="mailto:me@harshanand.dev" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center relative w-12 h-12 shrink-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 hover:scale-110 transition-transform hover:border-zinc-300 dark:hover:border-zinc-700 bg-white dark:bg-zinc-900">
                 <Mail className="block group-hover:hidden text-zinc-600 dark:text-zinc-400" />
